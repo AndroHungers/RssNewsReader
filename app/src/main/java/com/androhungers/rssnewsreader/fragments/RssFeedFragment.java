@@ -23,8 +23,11 @@ import com.androhungers.rssnewsreader.R;
 import com.androhungers.rssnewsreader.activities.LoginActivity;
 import com.androhungers.rssnewsreader.activities.RssFeedActivity;
 import com.androhungers.rssnewsreader.adapters.RssPagerAdapter;
+import com.androhungers.rssnewsreader.common.Common;
 import com.androhungers.rssnewsreader.common.Constants;
 import com.androhungers.rssnewsreader.common.PreferenceHelper;
+import com.androhungers.rssnewsreader.customViews.CustomUserDetailsView;
+import com.androhungers.rssnewsreader.model.signin.DataModel;
 import com.androhungers.rssnewsreader.viewModel.RssFeedViewModel;
 import com.gigamole.navigationtabstrip.NavigationTabStrip;
 
@@ -88,8 +91,6 @@ public class RssFeedFragment extends Fragment {
         navigationTabStrip.setTitles("Home","My Rss");
         navigationTabStrip.setViewPager(viewPager);
 
-//        navigationTabStrip.setTabIndex(0, true);
-
 
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
@@ -111,10 +112,20 @@ public class RssFeedFragment extends Fragment {
         imgLogOut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                DataModel dataModel = new Common().getUserDataFromSignIn(new PreferenceHelper(getContext()).getString(Constants.USER_DATA_FIELD));
+                String userName = String.valueOf(dataModel.getUserName());
+                String name = String.valueOf(dataModel.getName());
+                String age = String.valueOf(dataModel.getAge());
+
+                CustomUserDetailsView customUserDetailsView = new CustomUserDetailsView(getContext());
+                customUserDetailsView.setItem(userName,name,age);
+
                 MaterialDialog.Builder dialogBuilder = new MaterialDialog.Builder(getContext());
                 dialogBuilder.setButtonTextColor(getResources().getColor(R.color.colorPrimary));
                 dialogBuilder.setTitle("Log out !!!");
-                dialogBuilder.setMessage("Are you sure to Log out?");
+                dialogBuilder.setView(customUserDetailsView);
+                //dialogBuilder.setMessage("User Name : "+userName+"\nName : "+name+"\nAge : "+age+"\n\nAre you sure to Log out?");
+                //dialogBuilder.setMessage("Are you sure to Log out?");
 
                 dialogBuilder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
@@ -144,8 +155,6 @@ public class RssFeedFragment extends Fragment {
             @Override
             public boolean onKey(View view, int keyCode, KeyEvent event) {
                 if (event.getAction() == KeyEvent.ACTION_UP && keyCode == KeyEvent.KEYCODE_BACK) {
-
-                    //getActivity().getSupportFragmentManager().popBackStack();
                     getActivity().finish();
                     return true;
                 } else

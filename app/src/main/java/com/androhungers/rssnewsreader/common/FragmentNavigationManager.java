@@ -9,7 +9,11 @@ import com.androhungers.rssnewsreader.services.NavigationManager;
 
 import java.util.HashMap;
 
-
+/**
+ * This is used for fragment navigation
+ * Using this easily push, pop fragments from stack
+ * Total fragment manager is here
+ */
 public class FragmentNavigationManager implements NavigationManager {
     private AppCompatActivity  activity;
     private  int containerId;

@@ -60,12 +60,12 @@ public class LoginActivity extends AppCompatActivity {
             public void onChanged(String s) {
                 if(s.equalsIgnoreCase("signin")){
                     expandableLayout.collapse();
-                    textViewSignIn.setText("Sign In");
-                    textViewSignUp.setText("Don't have an Account?");
+                    textViewSignIn.setText("Log In");
+                    textViewSignUp.setText("Don't have an Account? Register");
                 }else {
                     expandableLayout.expand();
                     textViewSignIn.setText("Register");
-                    textViewSignUp.setText("Already have an Account?");
+                    textViewSignUp.setText("Already have an Account? Log In");
                 }
             }
         });
@@ -75,7 +75,7 @@ public class LoginActivity extends AppCompatActivity {
             public void onChanged(String s) {
                 rotateLoading.stop();
                 if(viewModel.STATE.getValue().equalsIgnoreCase("signin")){
-                    textViewSignIn.setText("Sign In");
+                    textViewSignIn.setText("Log In");
                 }else {
                     textViewSignIn.setText("Register");
                 }
@@ -129,7 +129,7 @@ public class LoginActivity extends AppCompatActivity {
                             @Override
                             public void onChanged(SigninResponseModel signinResponseModel) {
                                 rotateLoading.stop();
-                                textViewSignIn.setText("Sign In");
+                                textViewSignIn.setText("Log In");
                                 if(signinResponseModel.isSuccess()){
                                     String data = new Gson().toJson(signinResponseModel.getData());
                                     new PreferenceHelper(getApplicationContext()).saveString(Constants.USER_DATA_FIELD,data);
@@ -142,7 +142,7 @@ public class LoginActivity extends AppCompatActivity {
                                     MaterialDialog.Builder dialogBuilder = new MaterialDialog.Builder(LoginActivity.this);
                                     dialogBuilder.setButtonTextColor(getResources().getColor(R.color.colorPrimary));
                                     dialogBuilder.setTitle("Error !!!");
-                                    dialogBuilder.setMessage("Something went wrong. Please try again.");
+                                    dialogBuilder.setMessage("Please try with valid Credentials.");
 
                                     dialogBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                                         @Override
@@ -164,7 +164,7 @@ public class LoginActivity extends AppCompatActivity {
                             @Override
                             public void onChanged(SignupResponseModel signupResponseModel) {
                                 rotateLoading.stop();
-                                textViewSignIn.setText("Sign Up");
+                                textViewSignIn.setText("Register");
                                 if(signupResponseModel.isSuccess()){
                                     String data = new Gson().toJson(signupResponseModel.getData());
                                     new PreferenceHelper(getApplicationContext()).saveString(Constants.USER_DATA_FIELD,data);
@@ -173,10 +173,10 @@ public class LoginActivity extends AppCompatActivity {
                                     startActivity(intent);
                                     finish();
                                 }else {
-                                    MaterialDialog.Builder dialogBuilder = new MaterialDialog.Builder(getApplicationContext());
+                                    MaterialDialog.Builder dialogBuilder = new MaterialDialog.Builder(LoginActivity.this);
                                     dialogBuilder.setButtonTextColor(getResources().getColor(R.color.colorPrimary));
                                     dialogBuilder.setTitle("Error !!!");
-                                    dialogBuilder.setMessage("Something went wrong. Please try again.");
+                                    dialogBuilder.setMessage(signupResponseModel.getMessage());
 
                                     dialogBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                                         @Override

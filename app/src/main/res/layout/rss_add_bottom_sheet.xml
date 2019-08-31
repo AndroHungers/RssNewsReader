@@ -5,121 +5,130 @@
     android:background="@color/colorWhite"
     android:id="@+id/rl_root"
     android:layout_height="wrap_content">
-    <ImageView
-        android:id="@+id/img_close"
-        android:layout_margin="16dp"
-        android:layout_alignParentLeft="true"
-        android:src="@drawable/cross"
-        android:layout_width="14dp"
-        android:layout_height="20dp"/>
-    <ImageView
-        android:id="@+id/img"
-        android:layout_margin="16dp"
-        android:layout_centerInParent="true"
-        android:layout_alignParentTop="true"
-        android:src="@drawable/drag"
-        android:layout_width="26dp"
-        android:layout_height="20dp"/>
-    <View
-        android:layout_marginTop="-6dp"
-        android:layout_below="@+id/img"
-        android:background="#aaa"
-        android:layout_width="match_parent" android:layout_height="0.4dp"/>
-    <TextView
-        android:layout_marginBottom="8dp"
-        android:id="@+id/tv_class"
-        android:layout_marginTop="8dp"
-        android:gravity="center"
-        android:text="Add Rss"
-        android:textColor="@color/colorBlack"
-        android:textSize="20sp"
-        android:textStyle="normal"
-        android:layout_below="@+id/img"
-        android:layout_width="match_parent" android:layout_height="wrap_content"/>
-
-    <LinearLayout
-        android:layout_marginTop="32dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_below="@+id/tv_class"
-        android:orientation="vertical"
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <LinearLayout
-            android:layout_marginBottom="16dp"
-            android:gravity="center_vertical"
-            android:background="@drawable/border_round_edit_profile"
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/profile_height_size">
-            <ImageView
-                android:layout_marginLeft="16dp"
-                android:src="@drawable/ic_user"
-                android:layout_width="@dimen/img_size"
-                android:layout_height="@dimen/img_size"/>
-            <EditText
-                android:inputType="textEmailAddress"
-                android:id="@+id/et_feed_name"
-                android:textSize="14sp"
-                android:hint="Rss Title"
-                android:layout_marginLeft="16dp"
-                android:background="@android:color/transparent"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
-
-        </LinearLayout>
-        <LinearLayout
-            android:layout_marginBottom="16dp"
-            android:gravity="center_vertical"
-            android:background="@drawable/border_round_edit_profile"
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/profile_height_size">
-            <ImageView
-                android:padding="0dp"
-                android:layout_marginLeft="16dp"
-                android:src="@drawable/ic_password"
-                android:layout_width="@dimen/img_size"
-                android:layout_height="@dimen/img_size"/>
-            <EditText
-                android:inputType="text"
-                android:id="@+id/et_link"
-                android:textSize="14sp"
-                android:hint="Rss Link"
-                android:layout_marginLeft="16dp"
-                android:background="@android:color/transparent"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
-        </LinearLayout>
-
         <RelativeLayout
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="48dp"
-            android:layout_gravity="bottom|center"
             android:layout_width="match_parent"
-            android:layout_height="40dp">
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/img_close"
+                android:layout_margin="16dp"
+                android:layout_alignParentLeft="true"
+                android:src="@drawable/cross"
+                android:layout_width="14dp"
+                android:layout_height="20dp"/>
+            <ImageView
+                android:id="@+id/img"
+                android:layout_margin="16dp"
+                android:layout_centerInParent="true"
+                android:layout_alignParentTop="true"
+                android:src="@drawable/drag"
+                android:layout_width="26dp"
+                android:layout_height="20dp"/>
+            <View
+                android:layout_marginTop="-6dp"
+                android:layout_below="@+id/img"
+                android:background="#aaa"
+                android:layout_width="match_parent" android:layout_height="0.4dp"/>
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:id="@+id/btn_add"
+                android:layout_marginBottom="8dp"
+                android:id="@+id/tv_class"
+                android:layout_marginTop="8dp"
                 android:gravity="center"
-                android:text="ADD"
-                android:textSize="16sp"
-                android:textAllCaps="false"
-                android:textColor="@color/colorWhite"
-                android:background="@drawable/shape_rounder_corner_flight_search">
+                android:text="Add Rss"
+                android:textColor="@color/colorBlack"
+                android:textSize="20sp"
+                android:textStyle="normal"
+                android:layout_below="@+id/img"
+                android:layout_width="match_parent" android:layout_height="wrap_content"/>
 
-            </TextView>
+            <LinearLayout
+                android:layout_marginTop="32dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_below="@+id/tv_class"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_marginBottom="16dp"
+                    android:gravity="center_vertical"
+                    android:background="@drawable/border_round_edit_profile"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/profile_height_size">
+                    <ImageView
+                        android:layout_marginLeft="16dp"
+                        android:src="@drawable/ic_user"
+                        android:layout_width="@dimen/img_size"
+                        android:layout_height="@dimen/img_size"/>
+                    <EditText
+                        android:inputType="textEmailAddress"
+                        android:id="@+id/et_feed_name"
+                        android:textSize="14sp"
+                        android:hint="Rss Title"
+                        android:layout_marginLeft="16dp"
+                        android:background="@android:color/transparent"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/>
 
-            <com.victor.loading.rotate.RotateLoading
-                android:id="@+id/progress"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                app:loading_width="2dp"
-                app:loading_color="#ffffff"
-                android:layout_centerInParent="true"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_marginBottom="16dp"
+                    android:gravity="center_vertical"
+                    android:background="@drawable/border_round_edit_profile"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/profile_height_size">
+                    <ImageView
+                        android:padding="0dp"
+                        android:layout_marginLeft="16dp"
+                        android:src="@drawable/ic_password"
+                        android:layout_width="@dimen/img_size"
+                        android:layout_height="@dimen/img_size"/>
+                    <EditText
+                        android:inputType="text"
+                        android:id="@+id/et_link"
+                        android:textSize="14sp"
+                        android:hint="Rss Link"
+                        android:layout_marginLeft="16dp"
+                        android:background="@android:color/transparent"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/>
+                </LinearLayout>
 
+                <RelativeLayout
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="48dp"
+                    android:layout_gravity="bottom|center"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:id="@+id/btn_add"
+                        android:gravity="center"
+                        android:text="ADD"
+                        android:textSize="16sp"
+                        android:textAllCaps="false"
+                        android:textColor="@color/colorWhite"
+                        android:background="@drawable/shape_rounder_corner_flight_search">
+
+                    </TextView>
+
+                    <com.victor.loading.rotate.RotateLoading
+                        android:id="@+id/progress"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        app:loading_width="2dp"
+                        app:loading_color="#ffffff"
+                        android:layout_centerInParent="true"/>
+
+                </RelativeLayout>
+
+            </LinearLayout>
         </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
 
-    </LinearLayout>
 </RelativeLayout>

@@ -22,7 +22,7 @@
             android:layout_height="wrap_content">
             <LinearLayout
                 android:id="@+id/ll"
-                android:layout_marginRight="20dp"
+                android:layout_marginRight="24dp"
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
@@ -30,7 +30,7 @@
                     android:ellipsize="end"
                     android:maxLines="1"
                     android:id="@+id/tv_feed_name"
-                    android:text="Title mnsmdnsm djshdjsd shdjs"
+                    android:text="Title mnsmdnsm djshfhdjfhjdfhdjhfjdhfhfjdhfjdhfdjsd shdjs"
                     android:textStyle="bold"
                     android:textColor="@color/colorBlack"
                     android:textSize="16sp"
@@ -52,18 +52,15 @@
             <LinearLayout
                 android:id="@+id/ll_edit"
                 android:gravity="center"
-                android:layout_alignParentLeft="true"
-                android:layout_below="@+id/ll"
-                android:layout_marginTop="12dp"
-                android:background="@drawable/shape_rounder_corner_flight_search2"
-                android:layout_width="70dp"
-                android:layout_height="20dp">
+                android:layout_alignParentRight="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
                 <ImageView
                     android:src="@drawable/pencil"
-                    android:layout_marginLeft="8dp"
-                    android:layout_width="10dp"
-                    android:layout_height="10dp" />
+                    android:layout_width="20dp"
+                    android:layout_height="20dp" />
                 <TextView
+                    android:visibility="gone"
                     android:layout_width="50dp"
                     android:layout_height="20dp"
                     android:id="@+id/btn_add"
@@ -76,13 +73,13 @@
             </LinearLayout>
 
             <ImageView
+                android:layout_marginTop="16dp"
                 android:id="@+id/img_delete"
-                android:layout_alignParentTop="true"
+                android:layout_below="@+id/ll_edit"
                 android:layout_alignParentRight="true"
                 android:src="@drawable/trash"
-                android:layout_marginLeft="8dp"
-                android:layout_width="20dp"
-                android:layout_height="20dp" />
+                android:layout_width="22dp"
+                android:layout_height="22dp" />
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
 </RelativeLayout>

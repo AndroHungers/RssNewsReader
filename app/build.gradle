@@ -7,8 +7,8 @@ android {
         applicationId "com.androhungers.rssnewsreader"
         minSdkVersion 21
         targetSdkVersion 29
-        versionCode 1
-        versionName "1.0"
+        versionCode 2
+        versionName "1.1"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -48,4 +48,5 @@ dependencies {
     implementation 'com.github.michael-rapp:android-material-dialog:5.1.6'
     implementation 'com.baoyz.pullrefreshlayout:library:1.2.0'
     implementation 'com.squareup.retrofit2:converter-simplexml:2.6.1'
+    implementation 'com.balysv:material-ripple:1.0.2'
 }

@@ -39,9 +39,9 @@
                 android:layout_centerInParent="true"
                 android:layout_margin="8dp"
                 android:layout_alignParentRight="true"
-                android:src="@drawable/logout"
-                android:layout_width="30dp"
-                android:layout_height="30dp" />
+                android:src="@drawable/logout1"
+                android:layout_width="25dp"
+                android:layout_height="25dp" />
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
 

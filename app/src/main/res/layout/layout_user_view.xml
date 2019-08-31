@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:id="@+id/container"
+    android:padding="16dp"
+    android:layout_marginBottom="16dp"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:layout_centerInParent="true"
+        android:layout_alignParentLeft="true"
+        android:id="@+id/tv_name_char"
+        android:textColor="@color/colorWhite"
+        android:textSize="16sp"
+        android:gravity="center"
+        android:text="A"
+        android:background="@drawable/circle_shape"
+        android:layout_width="48dp"
+        android:layout_height="48dp" />
+    <LinearLayout
+        android:layout_toRightOf="@+id/tv_name_char"
+        android:layout_marginLeft="16dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/tv_name"
+            android:text="Abdullah Emroze"
+            android:textSize="18sp"
+            android:textColor="@color/colorBlack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/tv_user_name"
+            android:layout_marginTop="4dp"
+            android:textColor="#999"
+            android:textSize="14sp"
+            android:text="User Name : emroze"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/tv_age"
+            android:textColor="#999"
+            android:textSize="14sp"
+            android:text="Age : 25 years"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</RelativeLayout>

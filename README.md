@@ -1,4 +1,4 @@
-#### RSS News Reader
+# RSS News Reader
 
 ## Notice
 This app is compatible with Android 5.+ (Lolipop) Versions. So please be sure your android version is equal or above 5.+.
@@ -15,6 +15,10 @@ This is an Android Application to parse a RSS Feed. You can retrive data from RS
 
 **Disclaimer**: This App has been built for only displaying the feed of RSS. This is a personal projects. Here is the contact link (http://androhungers.com).
 
+## Installation:
+Here is the google play link of this app 
+https://play.google.com/store/apps/details?id=com.androhungers.rssnewsreader
+
 ## How to use:
 At 1st you have to log in if you have an account. If you don't have an account then first register your account.
 Then your home feed is comming here you can see your RSS feed what you saved.
@@ -24,7 +28,7 @@ If you want to refresh you feed then just swip down, it works!
 ## Version:
 The app version is below:
 ```Version
-1.0.0
+1.1.0
 ```
 
 ## Library
